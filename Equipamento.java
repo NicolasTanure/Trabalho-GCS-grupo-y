@@ -11,11 +11,11 @@ public class Equipamento {
         this.setor = setor;
     }
 
-    public getSetor(){
+    public Setor getSetor(){
         return setor;
     }
 
-    public setSetor(Setor setor){
+    public void setSetor(Setor setor){
         this.setor = setor;
     }
 
