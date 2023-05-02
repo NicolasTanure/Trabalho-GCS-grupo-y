@@ -1,3 +1,4 @@
+
 public class Equipamento {
     private int id;
     private String descrição;
@@ -17,6 +18,10 @@ public class Equipamento {
 
     public void setSetor(Setor setor){
         this.setor = setor;
+    }
+
+    public int getId(){
+        return id;
     }
 
 
