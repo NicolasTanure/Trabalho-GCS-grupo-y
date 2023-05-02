@@ -4,11 +4,16 @@ public class Funcionario {
     private String departamento;
     private boolean isSuporte;
     
-    public Funcionario(int id, String nome, String departamento, boolean isSuporte) {
+    public Funcionario(int id, String nome, String departamento) {
         this.id = id;
         this.nome = nome;
         this.departamento = departamento;
-        this.isSuporte = isSuporte;
+        if(departamento.equals("Suporte")){
+            isSuporte = true;
+        }
+        else{
+            isSuporte = false;
+        }
     }
     
     @Override
@@ -22,5 +27,9 @@ public class Funcionario {
 
     public String getDepartamento(){
         return departamento;
+    }
+
+    public boolean getIsSuporte(){
+        return isSuporte;
     }
 }
