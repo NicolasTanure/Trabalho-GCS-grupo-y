@@ -15,4 +15,12 @@ public class Funcionario{
     public String toString() {
         return "Funcionário " + nome + " (id: " + id + ") do departamento " + departamento + ".";
     }
+
+    public int getId(){
+        return id;
+    }
+
+    public String getDepartamento(){
+        return departamento;
+    }
 }
