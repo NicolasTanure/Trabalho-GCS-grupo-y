@@ -25,7 +25,7 @@ public class Grupo {
     public boolean checarSuporte(int id){
         if(checarFuncionario(id) != null){
             Funcionario aux = checarFuncionario(id);
-            if(aux.getDepartamento().equals("Suporte")){
+            if(aux.getIsSuporte() == true){
                 return true;
             }
         }
