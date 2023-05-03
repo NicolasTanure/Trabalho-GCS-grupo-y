@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Aplicação {
@@ -29,15 +30,34 @@ private void menu(){
 }
 
 public void executa(){
+    Funcionario atual;
+    do{
+    System.out.println("Digite o seu id de funcionário");
+    int id = entrada.nextInt();
+    if(grupo.checarFuncionario(id) == null){
+        System.out.println("Funcionario inválido");
+        atual = null;
+    }
+    else{
+         atual = grupo.checarFuncionario(id);
+    }
+
+    }while(atual == null);
+
     int opcao;
     do{
         menu();
-         opcao = entrada.nextInt();
+        opcao = entrada.nextInt();
         entrada.nextLine();
 
         switch(opcao){
             case 1:
-            cadastraFuncionario();
+            cadastraFuncionario();  
+            break;
+            case 2:
+            cadastraEquipamento();
+            break;
+            case 0:
             break;
             
         
@@ -63,6 +83,25 @@ public void cadastraFuncionario(){
         System.out.println("Funcionário não cadastrado...");
     }
 
+}
+
+public void cadastraEquipamento(){
+    
+    System.out.println("Digite o Id do equipamento");
+    int id = entrada.nextInt();
+    entrada.nextLine();
+    System.out.println("Digite a descrição do equipamento.");
+    String descrição = entrada.nextLine();
+    System.out.println("Digite a data de aquisição do equipamento");
+    int data = entrada.nextInt();
+    entrada.nextLine();
+    System.out.println("Digite o setor  do equipamento");
+    String setor  = entrada.nextLine();
+    Setor setorr = new Setor(setor);
+    Equipamento equipamento = new Equipamento(id, descrição, data, setorr);
+    equipamentos.adicionarEquipamento(equipamento);
+    System.out.println("Equipamento cadastrado com sucesso!");
+    
 }
 
     

@@ -4,7 +4,7 @@ public class EquipamentoLista {
     private ArrayList<Equipamento> listaEquipamentos;
 
     public EquipamentoLista(){
-        this.listaEquipamentos = new ArrayList<>();
+        this.listaEquipamentos = new ArrayList<Equipamento>();
     }
 
     public void adicionarEquipamento(Equipamento equipamento){
