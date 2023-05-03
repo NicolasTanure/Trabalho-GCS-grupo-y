@@ -68,6 +68,7 @@ public void executa(){
                 trocaSetor();
 
             }
+            break;
             case 0:
             break;
             
