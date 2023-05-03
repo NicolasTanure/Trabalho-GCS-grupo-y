@@ -21,7 +21,7 @@ private void menu(){
     System.out.println("2) Cadastrar equipamento.");
     System.out.println("3) Criar chamado.");
     System.out.println("4) Gerenciar chamados.");
-    System.out.println("5) Gerenciar equipamentos.");
+    System.out.println("5) Gerenciar setor de um equipamento.");
     System.out.println("----------------------");
     System.out.println("Escolha uma opção");
 
@@ -30,10 +30,13 @@ private void menu(){
 }
 
 public void executa(){
+    Funcionario um = new Funcionario(01,"01", "Suporte");
+    grupo.cadastraFuncionario(um);
     Funcionario atual;
     do{
     System.out.println("Digite o seu id de funcionário");
     int id = entrada.nextInt();
+    entrada.nextLine();
     if(grupo.checarFuncionario(id) == null){
         System.out.println("Funcionario inválido");
         atual = null;
@@ -57,6 +60,14 @@ public void executa(){
             case 2:
             cadastraEquipamento();
             break;
+            case 5:
+            if(atual.getIsSuporte() == false){
+                System.out.println("Acesso negado, não é da equipe de suporte.");
+            }
+            else{
+                trocaSetor();
+
+            }
             case 0:
             break;
             
@@ -102,6 +113,26 @@ public void cadastraEquipamento(){
     equipamentos.adicionarEquipamento(equipamento);
     System.out.println("Equipamento cadastrado com sucesso!");
     
+}
+
+public void trocaSetor(){
+    System.out.println("Qual o id do equipamento? ");
+    int id = entrada.nextInt();
+    entrada.nextLine();
+    if(equipamentos.buscarEquipamento(id) == null){
+       System.out.println("Equipamento não encontrado");
+    }
+    else{
+        Equipamento equipamento = equipamentos.buscarEquipamento(id);
+        System.out.println("Equipamento encontrado!");
+        System.out.println("Qual setor deseja colocar-lo?");
+        String setor = entrada.nextLine();
+        Setor setorr = new Setor(setor);
+        equipamento.setSetor(setorr);
+        System.out.println("Operação concluída com sucesso");
+
+    }
+
 }
 
     
