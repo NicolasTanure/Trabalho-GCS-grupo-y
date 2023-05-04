@@ -24,7 +24,21 @@ public class Equipamento {
         return id;
     }
 
+<<<<<<< HEAD
     public String getDescricao() {
         return descrição;
     }
+=======
+    public String getDescrição(){
+        return descrição;
+    }
+
+    public String toString() {
+        return "Equipamento "  + " (id: " + id + ") do setor " + setor.getNome() + ".";
+    }
+
+
+
+    
+>>>>>>> f738c44e6257dadcda47ea5e3cc29883e5561b11
 }
