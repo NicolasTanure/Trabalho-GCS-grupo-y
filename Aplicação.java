@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Aplicação {
 private Grupo grupo;
 private EquipamentoLista  equipamentos;
+private ChamadoLista chamados;
 private Scanner entrada;
 
 public Aplicação(){
@@ -22,6 +23,7 @@ private void menu(){
     System.out.println("3) Criar chamado.");
     System.out.println("4) Gerenciar chamados.");
     System.out.println("5) Gerenciar setor de um equipamento.");
+    System.out.println("6) Consultar painel de dados.");
     System.out.println("----------------------");
     System.out.println("Escolha uma opção");
 
@@ -60,6 +62,10 @@ public void executa(){
             case 2:
             cadastraEquipamento();
             break;
+            case 3:
+            // criar inicialização do chamado
+            // depois adicionar na lista com "chamados.add(chamadoCriado);"
+            break;
             case 5:
             if(atual.getIsSuporte() == false){
                 System.out.println("Acesso negado, não é da equipe de suporte.");
@@ -68,6 +74,9 @@ public void executa(){
                 trocaSetor();
 
             }
+            break;
+            case 6:
+            painelDados.exibirPainel(chamados);
             break;
             case 0:
             break;
