@@ -29,4 +29,13 @@ public class EquipamentoLista {
         return null;
     }
 
+    public int length(){
+        return listaEquipamentos.size();
+    }
+
+    public Equipamento get(int i){
+        return listaEquipamentos.get(i);
+
+    }
+
 }

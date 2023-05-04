@@ -22,6 +22,7 @@ private void menu(){
     System.out.println("3) Criar chamado.");
     System.out.println("4) Gerenciar chamados.");
     System.out.println("5) Gerenciar setor de um equipamento.");
+    System.out.println("6) Pesquisar um equipamento pela descrição.");
     System.out.println("----------------------");
     System.out.println("Escolha uma opção");
 
@@ -68,6 +69,12 @@ public void executa(){
                 trocaSetor();
 
             }
+            break;
+            case 6:
+            System.out.println("Informe a descrição do equipamento");
+            String descrição = entrada.nextLine();
+            System.out.println("Equipamentos com esta descrição:");
+            pesquisaEquipamento(descrição);
             break;
             case 0:
             break;
@@ -132,6 +139,16 @@ public void trocaSetor(){
         equipamento.setSetor(setorr);
         System.out.println("Operação concluída com sucesso");
 
+    }
+
+}
+
+public void pesquisaEquipamento(String descrição){
+    for( int i = 0; i<equipamentos.length(); i++){
+        Equipamento e = equipamentos.get(i);
+        if(descrição.contains(e.getDescrição())){
+            System.out.println(e.toString());
+        }
     }
 
 }
