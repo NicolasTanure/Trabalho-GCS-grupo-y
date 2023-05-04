@@ -67,4 +67,13 @@ public class Chamado {
         EM_ANDAMENTO,
         FECHADO
     }
+
+    public void dadosChamado() {
+        System.out.println("--- Chamado encontrado ---");
+        System.out.println("ID: " + id);
+        System.out.println("Funcionário: " + funcionarioAbertura.getNome());
+        System.out.println("ID do equipamento: " + equipamento.getId());
+        System.out.println("Data: " + dataSolicitacao.toString());
+        System.out.println("Resolução: " + resolucao);
+    }
 }

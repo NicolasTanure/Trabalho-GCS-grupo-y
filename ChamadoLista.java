@@ -82,4 +82,42 @@ public class ChamadoLista{
         return (int)chamadosPorDia;
     }
 
+    public Chamado pesquisaPorFuncionario(String nome){
+        for(Chamado chamado : chamados){
+            if(chamado.getFuncionarioAbertura().getNome().equalsIgnoreCase(nome)){
+                return chamado;
+            }
+        }
+        return null;
+    }
+
+    public Chamado pesquisaPorDescricao(String descricao){
+        for(Chamado chamado : chamados){
+            if(chamado.getEquipamento().getDescricao().equalsIgnoreCase(descricao)){
+                return chamado;
+            }
+        }
+        return null;
+    }
+
+    public Chamado pesquisaPorSetor(String setor){
+        for(Chamado chamado : chamados){
+            if(chamado.getEquipamento().getSetor().getNome().equalsIgnoreCase(setor)){
+                return chamado;
+            }
+        }
+        return null;
+    }
+
+    public Chamado pesquisaPorResolucao(String resolucao){
+        for(Chamado chamado : chamados){
+            if(chamado.getResolucao().equalsIgnoreCase(resolucao)){
+                return chamado;
+            }
+        }
+        return null;
+    }
+
+
+
 }

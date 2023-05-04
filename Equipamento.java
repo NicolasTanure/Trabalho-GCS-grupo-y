@@ -24,6 +24,7 @@ public class Equipamento {
         return id;
     }
 
-
-    
+    public String getDescricao() {
+        return descrição;
+    }
 }

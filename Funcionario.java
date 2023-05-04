@@ -31,5 +31,11 @@ public class Funcionario {
 
     public boolean getIsSuporte(){
         return isSuporte;
+
+    
+    }
+
+    public String getNome() {
+        return nome;
     }
 }
