@@ -31,11 +31,16 @@ public class Funcionario {
 
     public boolean getIsSuporte(){
         return isSuporte;
-
-    
     }
 
     public String getNome() {
         return nome;
+    }
+
+    public void atualizarStatusChamado(int idChamado, String novoStatus) {
+        if (isSuporte) {
+        } else {
+            System.out.println("Apenas funcionários do departamento de suporte podem atualizar o status de chamados.");
+        }
     }
 }
