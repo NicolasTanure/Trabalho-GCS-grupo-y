@@ -3,7 +3,11 @@ private String nome;
 
 public Setor(String nome){
     this.nome = nome;
-    //oi
+    
+}
+
+public String getNome(){
+    return nome;
 }
 
 
